@@ -10,7 +10,7 @@ namespace sinavUygulamasi.Models
 
     public class UrunModel
     {
-
+        public List<UrunModel> Kategoriler { get; set; }
         public  urunler Urunler { get; set; }
         public int urun_id { get; set; }
         public string urun_ad { get; set; }

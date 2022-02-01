@@ -25,5 +25,7 @@ namespace sinavUygulamasi.Controllers
             }).ToList();
             return View(uList);
         }
+
+     
     }
 }

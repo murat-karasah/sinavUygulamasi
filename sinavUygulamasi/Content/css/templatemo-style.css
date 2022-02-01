@@ -416,12 +416,37 @@ p, address {
   margin-bottom: 40px;
 }
 
+tm-paging-links-detay {
+    
+}
+
 .tm-paging-item {
   list-style: none;
   display: inline-block;
   border: 1px solid #2F956D;
   margin: 7px;
 }
+
+.tm-paging-item-detay {
+    width:250px;
+    list-style: none;
+     margin: 7px;
+}
+
+.tm-paging-link-detay {
+    padding: 10px 30px;
+  display: flex;
+    align-items: center;
+     text-decoration: none;
+    color: #2F956D;
+    background-color: transparent;
+}
+
+    .tm-paging-link-detay.active,
+    .tm-paging-link-detay:hover {
+        background-color: #2F956D;
+        color: white;
+    }
 
 .tm-paging-link {
   padding: 10px 30px;

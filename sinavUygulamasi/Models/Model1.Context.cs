@@ -10,11 +10,14 @@
 namespace sinavUygulamasi.Models
 {
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
     public partial class sinavdbEntities1 : DbContext
     {
+        internal IEnumerable<object> kategori;
+
         public sinavdbEntities1()
             : base("name=sinavdbEntities1")
         {

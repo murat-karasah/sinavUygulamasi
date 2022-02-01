@@ -11,12 +11,24 @@ namespace sinavUygulamasi.Controllers
     {
         sinavdbEntities1 db = new sinavdbEntities1();
         UrunModel model = new UrunModel();
+        
 
         // GET: Urun
         public ActionResult Detay(int id)
         {
+            
+            List<UrunModel> kList = db.kategoris.Select(x => new UrunModel
+            {
+               urun_kategori=x.kategori_adi,
+               urun_kategori_id=x.kategori_id,
+            }).ToList();
             model.Urunler = db.urunler.Find(id);
             return View(model);
+
+            
+
+            
+            
         }
     }
 }

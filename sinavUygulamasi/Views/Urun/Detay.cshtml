@@ -1,19 +1,43 @@
 ﻿@model sinavUygulamasi.Models.UrunModel
+
+
 @{
     ViewBag.Title = "Detay";
     Layout = "~/Views/Shader/_Layout.cshtml";
 }
-<div class="container">
-    <div class="col-4">
+
+<h2>Detay</h2>
+ 
+
+       
+
+
+<div class="tm-history-inner">
+    <div class="tm-paging-links-detay">
+
         <ul>
-            
+            <li class="tm-paging-item-detay"><a href="#" class="tm-paging-link-detay ">Pizza</a></li>
+            <li class="tm-paging-item-detay"><a href="#" class="tm-paging-link-detay active">Salad</a></li>
+            <li class="tm-paging-item-detay"><a href="#" class="tm-paging-link-detay">Noodle</a></li>
         </ul>
     </div>
 
-    <div class="col-8">
+    <img src="~/Content/img/gallery/@Model.Urunler.urun_resim" height="250" class="img-fluid tm-history-img" />
+    <div class="tm-history-text">
+        <h2>@Model.Urunler.urun_ad</h2>
+        <h3>@Model.Urunler.kategori.kategori_adi</h3>
+        <br />                 <p class="tm-mb-p">  <p>
+            @Model.Urunler.urun_aciklama
+        </p>
+        <br />
+        <p>@String.Format(new System.Globalization.CultureInfo("tr-TR"), "{0:c2}", Model.Urunler.fiyat)</p>
 
     </div>
-
-
 </div>
+    
+           
+            
+                
+              
+           
 
