@@ -1,4 +1,4 @@
-﻿@model List<sinavUygulamasi.Models.UrunModel>
+﻿@model sinavUygulamasi.Models.UrunModel
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shader/_Layout.cshtml";
@@ -14,9 +14,11 @@
         <nav>
             <ul>
                 <li class="tm-paging-item"><a href="#" class="tm-paging-link active">Tümü</a></li>
-                <li class="tm-paging-item"><a href="#" class="tm-paging-link ">Pizza</a></li>
-                <li class="tm-paging-item"><a href="#" class="tm-paging-link">Salad</a></li>
-                <li class="tm-paging-item"><a href="#" class="tm-paging-link">Noodle</a></li>
+                @foreach (var item in Model.Kategoriler)
+                {
+                    <li class="tm-paging-item"><a href="#" class="tm-paging-link">@item.kategori_adi</a></li>
+
+                }
             </ul>
         </nav>
     </div>
@@ -27,7 +29,7 @@
         <div id="tm-gallery-page-tümü" class="tm-gallery-page">
 
 
-            @foreach (var item in Model)
+            @foreach (var item in Model.Urunlerlist)
             {
                 <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
                     <figure>
@@ -46,13 +48,11 @@
 
 
         </div> <!-- gallery page 1 -->
-
- 
         <!-- gallery page 1 -->
         <div id="tm-gallery-page-pizza" class="tm-gallery-page">
-            @foreach (var item in Model)
+            @foreach (var item in Model.Urunlerlist)
             {
-                if (item.urun_kategori == "Pizza")
+                if (item.urun_kategori_id == 3)
                 {
                     <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
                         <figure>
@@ -70,9 +70,9 @@
         </div> <!-- gallery page 1 -->
         <!-- gallery page 2 -->
         <div id="tm-gallery-page-salad" class="tm-gallery-page hidden">
-            @foreach (var item in Model)
+            @foreach (var item in Model.Urunlerlist)
             {
-                if (item.urun_kategori == "Salata")
+                 if (item.urun_kategori_id==4)
                 {
                     <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
                         <figure>
@@ -90,9 +90,9 @@
         </div> <!-- gallery page 2 -->
         <!-- gallery page 3 -->
         <div id="tm-gallery-page-noodle" class="tm-gallery-page hidden">
-            @foreach (var item in Model)
+            @foreach (var item in Model.Urunlerlist)
             {
-                if (item.urun_kategori == "Noodle")
+                if (item.urun_kategori_id == 5)
                 {
                     <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
                         <figure>
@@ -110,7 +110,7 @@
 
         </div> <!-- gallery page 3 -->
     </div>
-    
+
 </main>
 
 

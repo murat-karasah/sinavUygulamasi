@@ -154,6 +154,7 @@
     <Compile Include="Models\kategori.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\KategoriModel.cs" />
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -208,11 +209,11 @@
     </Content>
     <None Include="packages.config" />
     <Content Include="Views\Shader\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Urun\Detay.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\About\Tarihce.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
