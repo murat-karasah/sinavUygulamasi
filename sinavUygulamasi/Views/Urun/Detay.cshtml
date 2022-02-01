@@ -6,34 +6,63 @@
     Layout = "~/Views/Shader/_Layout.cshtml";
 }
 
-<h2>Detay</h2>
- 
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="tm-paging-links">
+                <nav>
+                    <ul>
+                        @if (Model.Urunler.urun_kategori_id == 3)
+                        {
+                            <li class="tm-paging-item-detay"><a href="#" class="tm-paging-link active">Pizza</a></li>
+                            <li class="tm-paging-item-detay"><a href="#" class="tm-paging-link ">Salad</a></li>
+                            <li class="tm-paging-item-detay"><a href="#" class="tm-paging-link">Noodle</a></li>
+                        }
+
+                        @if (Model.Urunler.urun_kategori_id == 4)
+                        {
+                            <li class="tm-paging-item-detay"><a href="#" class="tm-paging-link ">Pizza</a></li>
+                            <li class="tm-paging-item-detay"><a href="#" class="tm-paging-link active ">Salad</a></li>
+                            <li class="tm-paging-item-detay"><a href="#" class="tm-paging-link">Noodle</a></li>
+                        }
+
+                        @if (Model.Urunler.urun_kategori_id == 5)
+                        {
+                            <li class="tm-paging-item-detay"><a href="#" class="tm-paging-link ">Pizza</a></li>
+                            <li class="tm-paging-item-detay"><a href="#" class="tm-paging-link ">Salad</a></li>
+                            <li class="tm-paging-item-detay"><a href="#" class="tm-paging-link active">Noodle</a></li>
+                        }
+
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <article class="col-lg-6">
+            <figure class="tm-person">
+                <img src="~/Content/img/gallery/@Model.Urunler.urun_resim" alt="Image" class="img-fluid tm-person-img">
+                <figcaption class="tm-person-description">
+                    <h4 class="tm-person-name">@Model.Urunler.urun_ad </h4>
+                    <p class="tm-person-title">@Model.Urunler.kategori.kategori_adi</p>
+                    <p class="tm-person-about">
+                        @Model.Urunler.urun_aciklama
+                    </p>
+                    <br />
+                    <p>@String.Format(new System.Globalization.CultureInfo("tr-TR"), "{0:c2}", Model.Urunler.fiyat)</p>
+
+
+                </figcaption>
+            </figure>
+        </article>
+    </div>
+
+    
+
+
+</div>
 
        
 
-
-<div class="tm-history-inner">
-    <div class="tm-paging-links-detay">
-
-        <ul>
-            <li class="tm-paging-item-detay"><a href="#" class="tm-paging-link-detay ">Pizza</a></li>
-            <li class="tm-paging-item-detay"><a href="#" class="tm-paging-link-detay active">Salad</a></li>
-            <li class="tm-paging-item-detay"><a href="#" class="tm-paging-link-detay">Noodle</a></li>
-        </ul>
-    </div>
-
-    <img src="~/Content/img/gallery/@Model.Urunler.urun_resim" height="250" class="img-fluid tm-history-img" />
-    <div class="tm-history-text">
-        <h2>@Model.Urunler.urun_ad</h2>
-        <h3>@Model.Urunler.kategori.kategori_adi</h3>
-        <br />                 <p class="tm-mb-p">  <p>
-            @Model.Urunler.urun_aciklama
-        </p>
-        <br />
-        <p>@String.Format(new System.Globalization.CultureInfo("tr-TR"), "{0:c2}", Model.Urunler.fiyat)</p>
-
-    </div>
-</div>
+ 
     
            
             
